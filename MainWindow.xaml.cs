@@ -44,8 +44,15 @@ namespace TestRestLibrary
 
             this.login_textBox_userName.Text = Properties.Settings.Default.login_userName;
             this.login_passwordBox.Password = Properties.Settings.Default.login_password;
+            this.login_textBox_parameters.Text = Properties.Settings.Default.login_parameters;
 
             this.writeRes_textBox_resPath.Text = Properties.Settings.Default.writeRes_respath;
+            this.writeRes_textBox_content.Text = Properties.Settings.Default.writeRes_content;
+            this.writeRes_textBox_inputTimestamp.Text = Properties.Settings.Default.writeRes_inputTimestamp;
+            this.writeRes_textBox_metadata.Text = Properties.Settings.Default.writeRes_metadata;
+            this.writeRes_textBox_ranges.Text = Properties.Settings.Default.writeRes_ranges;
+            this.writeRes_textBox_style.Text = Properties.Settings.Default.writeRes_style;
+            this.writeRes_textBox_totalLength.Text = Properties.Settings.Default.writeRes_totalLength;
 
             this.getReaderInfo_textBox_barcode.Text = Properties.Settings.Default.getReaderInfo_barcode;
             this.getReaderInfo_textBox_resultTypeList.Text = Properties.Settings.Default.getReaderInfo_resultTypeList;
@@ -55,6 +62,81 @@ namespace TestRestLibrary
             this.setReaderInfo_textBox_newXml.Text = Properties.Settings.Default.setReaderInfo_newXml;
             this.setReaderInfo_textBox_oldXml.Text = Properties.Settings.Default.setReaderInfo_oldXml;
             this.setReaderInfo_textBox_oldTimestamp.Text = Properties.Settings.Default.setReaderInfo_oldTimestamp;
+
+            this.setLang_textBox_lang.Text = Properties.Settings.Default.setLang_lang;
+
+            this.verifyReaderPassword_textBox_readerBarcode.Text = Properties.Settings.Default.verifyReaderPassword_readerBarcode;
+            this.verifyReaderPassword_passwordBox.Password = Properties.Settings.Default.verifyReaderPassword_password;
+
+            this.changeReaderPassword_textBox_readerBarcode.Text = Properties.Settings.Default.changeReaderPassword_readerBarcode;
+            this.changeReaderPassword_passwordBox_old.Password = Properties.Settings.Default.changeReaderPassword_password_old;
+            this.changeReaderPassword_passwordBox_new.Password = Properties.Settings.Default.changeReaderPassword_password_new;
+
+            this.SearchBiblio_textBox_nPerMax.Text = Properties.Settings.Default.searchBiblio_perMax;
+            this.SearchBiblio_comboBox_strBiblioDbNames.Text = Properties.Settings.Default.searchBiblio_biblioDbNames;
+            this.SearchBiblio_comboBox_strFromStyle.Text = Properties.Settings.Default.searchBiblio_fromStyle;
+            this.SearchBiblio_comboBox_strMatchStyle.Text = Properties.Settings.Default.searchBiblio_matchStyle;
+            this.SearchBiblio_textBox_strLang.Text = Properties.Settings.Default.searchBiblio_lang;
+            this.SearchBiblio_textBox_strOutputStyle.Text = Properties.Settings.Default.searchBiblio_outputStyle;
+            this.SearchBiblio_textBox_strResultSetName.Text = Properties.Settings.Default.searchBiblio_resultSetName;
+            this.SearchBiblio_textBox_strSearchStyle.Text = Properties.Settings.Default.searchBiblio_searchStyle;
+            this.SearchBiblio_textBox_strQueryWord.Text = Properties.Settings.Default.searchBiblio_queryWord;
+
+            this.getSearchResult_textBox_Count.Text = Properties.Settings.Default.getSearchResult_count;
+            this.getSearchResult_textBox_resultsetName.Text = Properties.Settings.Default.getSearchResult_resultsetName;
+            this.getSearchResult_textBox_strBrowseInfoStyle.Text = Properties.Settings.Default.getSearchResult_browseInfoStyle;
+            this.getSearchResult_textBox_strLang.Text = Properties.Settings.Default.getSearchResult_lang;
+            this.getSearchResult_textBox_start.Text = Properties.Settings.Default.getSearchResult_start;
+
+            this.SearchReader_comboBox_strFrom.Text = Properties.Settings.Default.searchReader_from;
+            this.SearchReader_comboBox_strMatchStyle.Text = Properties.Settings.Default.searchReader_matchStyle;
+            this.SearchReader_comboBox_strReaderDbNames.Text = Properties.Settings.Default.searchReader_readerDbNames;
+            this.SearchReader_textBox_nPerMax.Text = Properties.Settings.Default.searchReader_perMax;
+            this.SearchReader_textBox_strLang.Text = Properties.Settings.Default.searchReader_lang;
+            this.SearchReader_textBox_strOutputStyle.Text = Properties.Settings.Default.searchReader_outputStyle;
+            this.SearchReader_textBox_strQueryWord.Text = Properties.Settings.Default.searchReader_queryWord;
+            this.SearchReader_textBox_strResultSetName.Text = Properties.Settings.Default.searchReader_resultSetName;
+
+            this.GetBiblioInfo_textBox_strBiblioRecPath.Text = Properties.Settings.Default.getBiblioInfo_biblioRecPath;
+            this.GetBiblioInfo_comboBox_strBiblioType.Text = Properties.Settings.Default.getBiblioInfo_biblioType;
+
+            this.GetItemInfo_comboBox_strResultType.Text = Properties.Settings.Default.getItemInfo_resultType;
+            this.GetItemInfo_comboBox_strBiblioType.Text = Properties.Settings.Default.getItemInfo_biblioType;
+            this.GetItemInfo_textBox_strBarcode.Text = Properties.Settings.Default.getItemInfo_barcode;
+
+            this.GetEntities_textBox_strBiblioRecPath.Text = Properties.Settings.Default.getEntities_biblioRecPath;
+            this.GetEntities_textBox_strLang.Text = Properties.Settings.Default.getEntities_lang;
+            this.GetEntities_textBox_lCount.Text = Properties.Settings.Default.getEntities_count;
+            this.GetEntities_textBox_lStart.Text = Properties.Settings.Default.getEntities_start;
+            this.GetEntities_comboBox_strStyle.Text = Properties.Settings.Default.getEntities_style;
+
+            this.GetBiblioSummary_textBox_strItemBarcode.Text = Properties.Settings.Default.getBiblioSummary_itemBarcode;
+            this.GetBiblioSummary_textBox_strConfirmItemRecPath.Text = Properties.Settings.Default.getBiblioSummary_confirmItemRecPath;
+            this.GetBiblioSummary_textBox_strBiblioRecPathExclude.Text = Properties.Settings.Default.getBiblioSummary_biblioRecPathExclude;
+
+            this.GetOperLog_textbox_lHint.Text = Properties.Settings.Default.getOperLog_hint;
+            this.GetOperLog_textbox_lIndex.Text = Properties.Settings.Default.getOperLog_index;
+            this.GetOperLog_textbox_strFileName.Text = Properties.Settings.Default.getOperLog_fileName;
+            this.GetOperLog_textbox_nAttachmentFragmentLength.Text = Properties.Settings.Default.getOperLog_attachmentFragmentLength;
+            this.GetOperLog_textbox_lAttachmentFragmentStart.Text = Properties.Settings.Default.getOperLog_attachmentFragmentStart;
+
+            this.GetBrowseRecords_textbox_paths.Text = Properties.Settings.Default.getBrowseRecords_paths;
+            this.GetBrowseRecords_textbox_strBrowseInfoStyle.Text = Properties.Settings.Default.getBrowseRecords_browseInfoStyle;
+
+            this.Return_comboBox_strAction.Text = Properties.Settings.Default.return_action;
+            this.Return_textBox_strBiblioFormatList.Text = Properties.Settings.Default.return_biblioFormatList;
+            this.Return_textBox_strComfirmItemRecPath.Text = Properties.Settings.Default.getBiblioSummary_confirmItemRecPath;
+            this.Return_textBox_strItemBarcode.Text = Properties.Settings.Default.return_itemBarcode;
+            this.Return_textBox_strItemFormatList.Text = Properties.Settings.Default.return_itemFormatList;
+            this.Return_textBox_strReaderBarcode.Text = Properties.Settings.Default.return_readerBarcode;
+            this.Return_textBox_strReaderFormatList.Text = Properties.Settings.Default.return_readerFormatList;
+            this.Return_textBox_strStyle.Text = Properties.Settings.Default.return_style;
+
+            this.PassGate_textBox_strReaderBarcode.Text = Properties.Settings.Default.passGate_readerBarcode;
+            this.PassGate_textBox_strResultTypeList.Text = Properties.Settings.Default.passGate_resultTypeList;
+            this.PassGate_textBox_strGateName.Text = Properties.Settings.Default.passGate_gateName;
+
+            this.GetStatisInfo_textBox_strDateRangeString.Text = Properties.Settings.Default.getStatisInfo_dateRangeString;
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -63,6 +145,8 @@ namespace TestRestLibrary
 
             Properties.Settings.Default.login_userName = this.login_textBox_userName.Text;
             Properties.Settings.Default.login_password = this.login_passwordBox.Password;
+            Properties.Settings.Default.login_parameters = this.login_textBox_parameters.Text;
+
 
             Properties.Settings.Default.writeRes_respath = this.writeRes_textBox_resPath.Text;
 
@@ -74,6 +158,79 @@ namespace TestRestLibrary
             Properties.Settings.Default.setReaderInfo_newXml = this.setReaderInfo_textBox_newXml.Text;
             Properties.Settings.Default.setReaderInfo_oldXml = this.setReaderInfo_textBox_oldXml.Text;
             Properties.Settings.Default.setReaderInfo_oldTimestamp = this.setReaderInfo_textBox_oldTimestamp.Text;
+
+            Properties.Settings.Default.verifyReaderPassword_readerBarcode = this.verifyReaderPassword_textBox_readerBarcode.Text;
+            Properties.Settings.Default.verifyReaderPassword_password = this.verifyReaderPassword_passwordBox.Password;
+
+            Properties.Settings.Default.changeReaderPassword_readerBarcode = this.changeReaderPassword_textBox_readerBarcode.Text;
+            Properties.Settings.Default.changeReaderPassword_password_old = this.changeReaderPassword_passwordBox_old.Password;
+            Properties.Settings.Default.changeReaderPassword_password_new = this.changeReaderPassword_passwordBox_new.Password;
+
+            Properties.Settings.Default.searchBiblio_perMax = this.SearchBiblio_textBox_nPerMax.Text;
+            Properties.Settings.Default.searchBiblio_biblioDbNames = this.SearchBiblio_comboBox_strBiblioDbNames.Text;
+            Properties.Settings.Default.searchBiblio_fromStyle = this.SearchBiblio_comboBox_strFromStyle.Text;
+            Properties.Settings.Default.searchBiblio_matchStyle = this.SearchBiblio_comboBox_strMatchStyle.Text;
+            Properties.Settings.Default.searchBiblio_lang = this.SearchBiblio_textBox_strLang.Text;
+            Properties.Settings.Default.searchBiblio_outputStyle = this.SearchBiblio_textBox_strOutputStyle.Text;
+            Properties.Settings.Default.searchBiblio_resultSetName = this.SearchBiblio_textBox_strResultSetName.Text;
+            Properties.Settings.Default.searchBiblio_searchStyle = this.SearchBiblio_textBox_strSearchStyle.Text;
+            Properties.Settings.Default.searchBiblio_queryWord = this.SearchBiblio_textBox_strQueryWord.Text;
+
+            Properties.Settings.Default.getSearchResult_count = this.getSearchResult_textBox_Count.Text;
+            Properties.Settings.Default.getSearchResult_resultsetName = this.getSearchResult_textBox_resultsetName.Text;
+            Properties.Settings.Default.getSearchResult_browseInfoStyle = this.getSearchResult_textBox_strBrowseInfoStyle.Text;
+            Properties.Settings.Default.getSearchResult_lang = this.getSearchResult_textBox_strLang.Text;
+            Properties.Settings.Default.getSearchResult_start = this.getSearchResult_textBox_start.Text;
+
+            Properties.Settings.Default.searchReader_from = this.SearchReader_comboBox_strFrom.Text;
+            Properties.Settings.Default.searchReader_matchStyle = this.SearchReader_comboBox_strMatchStyle.Text;
+            Properties.Settings.Default.searchReader_readerDbNames = this.SearchReader_comboBox_strReaderDbNames.Text;
+            Properties.Settings.Default.searchReader_perMax = this.SearchReader_textBox_nPerMax.Text;
+            Properties.Settings.Default.searchReader_lang = this.SearchReader_textBox_strLang.Text;
+            Properties.Settings.Default.searchReader_outputStyle = this.SearchReader_textBox_strOutputStyle.Text;
+            Properties.Settings.Default.searchReader_queryWord = this.SearchReader_textBox_strQueryWord.Text;
+            Properties.Settings.Default.searchReader_resultSetName = this.SearchReader_textBox_strResultSetName.Text;
+
+            Properties.Settings.Default.getBiblioInfo_biblioRecPath = this.GetBiblioInfo_textBox_strBiblioRecPath.Text;
+            Properties.Settings.Default.getBiblioInfo_biblioType = this.GetBiblioInfo_comboBox_strBiblioType.Text;
+
+            Properties.Settings.Default.getItemInfo_resultType = this.GetItemInfo_comboBox_strResultType.Text;
+            Properties.Settings.Default.getItemInfo_biblioType = this.GetItemInfo_comboBox_strBiblioType.Text;
+            Properties.Settings.Default.getItemInfo_barcode = this.GetItemInfo_textBox_strBarcode.Text;
+
+            Properties.Settings.Default.getEntities_biblioRecPath = this.GetEntities_textBox_strBiblioRecPath.Text;
+            Properties.Settings.Default.getEntities_lang = this.GetEntities_textBox_strLang.Text;
+            Properties.Settings.Default.getEntities_count = this.GetEntities_textBox_lCount.Text;
+            Properties.Settings.Default.getEntities_start = this.GetEntities_textBox_lStart.Text;
+            Properties.Settings.Default.getEntities_style = this.GetEntities_comboBox_strStyle.Text;
+
+            Properties.Settings.Default.getBiblioSummary_itemBarcode = this.GetBiblioSummary_textBox_strItemBarcode.Text;
+            Properties.Settings.Default.getBiblioSummary_confirmItemRecPath = this.GetBiblioSummary_textBox_strConfirmItemRecPath.Text;
+            Properties.Settings.Default.getBiblioSummary_biblioRecPathExclude = this.GetBiblioSummary_textBox_strBiblioRecPathExclude.Text;
+
+            Properties.Settings.Default.getOperLog_hint = this.GetOperLog_textbox_lHint.Text;
+            Properties.Settings.Default.getOperLog_index = this.GetOperLog_textbox_lIndex.Text;
+            Properties.Settings.Default.getOperLog_fileName = this.GetOperLog_textbox_strFileName.Text;
+            Properties.Settings.Default.getOperLog_attachmentFragmentLength = this.GetOperLog_textbox_nAttachmentFragmentLength.Text;
+            Properties.Settings.Default.getOperLog_attachmentFragmentStart = this.GetOperLog_textbox_lAttachmentFragmentStart.Text;
+
+            Properties.Settings.Default.getBrowseRecords_paths = this.GetBrowseRecords_textbox_paths.Text;
+            Properties.Settings.Default.getBrowseRecords_browseInfoStyle = this.GetBrowseRecords_textbox_strBrowseInfoStyle.Text;
+
+            Properties.Settings.Default.return_action = this.Return_comboBox_strAction.Text;
+            Properties.Settings.Default.return_biblioFormatList = this.Return_textBox_strBiblioFormatList.Text;
+            Properties.Settings.Default.getBiblioSummary_confirmItemRecPath = this.Return_textBox_strComfirmItemRecPath.Text;
+            Properties.Settings.Default.return_itemBarcode = this.Return_textBox_strItemBarcode.Text;
+            Properties.Settings.Default.return_itemFormatList = this.Return_textBox_strItemFormatList.Text;
+            Properties.Settings.Default.return_readerBarcode = this.Return_textBox_strReaderBarcode.Text;
+            Properties.Settings.Default.return_readerFormatList = this.Return_textBox_strReaderFormatList.Text;
+            Properties.Settings.Default.return_style = this.Return_textBox_strStyle.Text;
+
+            Properties.Settings.Default.passGate_readerBarcode = this.PassGate_textBox_strReaderBarcode.Text;
+            Properties.Settings.Default.passGate_resultTypeList = this.PassGate_textBox_strResultTypeList.Text;
+            Properties.Settings.Default.passGate_gateName = this.PassGate_textBox_strGateName.Text;
+
+            Properties.Settings.Default.getStatisInfo_dateRangeString = this.GetStatisInfo_textBox_strDateRangeString.Text;
 
             Properties.Settings.Default.Save();
         }
@@ -1008,8 +1165,6 @@ namespace TestRestLibrary
         #endregion
 
         #region 获得操作日志
-        long lIndex = 0;
-        long lHint = -1;
         private void GetOperLog_button_GetOperLog_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -1019,12 +1174,8 @@ namespace TestRestLibrary
 
                 GetOperLogRequest request = new GetOperLogRequest();
                 request.strFileName = this.GetOperLog_textbox_strFileName.Text;
-                request.lIndex = lIndex;// Convert.ToInt64(this.GetOperLog_textbox_lIndex.Text);
-                this.GetOperLog_textbox_lIndex.Text = lIndex.ToString();
-
-                request.lHint = lHint; //Convert.ToInt64(this.GetOperLog_textbox_lHint.Text);
-                this.GetOperLog_textbox_lHint.Text = lHint.ToString();
-
+                request.lIndex = Convert.ToInt64(this.GetOperLog_textbox_lIndex.Text);
+                request.lHint = Convert.ToInt64(this.GetOperLog_textbox_lHint.Text);
                 request.lAttachmentFragmentStart = Convert.ToInt64(this.GetOperLog_textbox_lAttachmentFragmentStart.Text);
                 request.nAttachmentFragmentLength = Convert.ToInt32(this.GetOperLog_textbox_nAttachmentFragmentLength.Text);
 
@@ -1038,51 +1189,7 @@ namespace TestRestLibrary
 
                 GetOperLogResponse response = Deserialize<GetOperLogResponse>(strResult);
 
-                // MessageBox.Show(this, strResult);
-                // this.GetOperLog_TextBox_results.Text = strResult;
-
-                XmlDocument dom = new XmlDocument();
-                try
-                {
-                    dom.LoadXml(response.strXml);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(this, ex.Message);
-                    return;
-                }
-
-                XmlNode node = dom.DocumentElement.SelectSingleNode("record/text()");
-                string strRecordXml = node.Value;
-
-                try
-                {
-                    dom.LoadXml(strRecordXml);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(this, ex.Message);
-                    return;
-                }
-                XmlNamespaceManager nsmgr = new XmlNamespaceManager(dom.NameTable);
-                nsmgr.AddNamespace("unimarc", "http://dp2003.com/UNIMARC");
-
-                /*
-                 * <unimarc:datafield tag="200" ind1="1" ind2="">
-  <unimarc:subfield code="a">罗振玉印谱</unimarc:subfield> 
-  <unimarc:subfield code="A">Luo Zhen Yu Yin Pu</unimarc:subfield> 
-  <unimarc:subfield code="f">李洪啸编著</unimarc:subfield> 
-  <unimarc:subfield code="F">Li Hong Xiao Bian Zhu</unimarc:subfield> 
-  </unimarc:datafield>
-
-                 */
-
-                node = dom.DocumentElement.SelectSingleNode("//unimarc:datafield[@tag='200']/unimarc:subfield[@code='a']/text()", nsmgr);
-                this.GetOperLog_TextBox_results.Text = node.Value;
-
-                lIndex++;
-                lHint = response.lHintNext;
-                // this.getReaderInfo_textBox_timestamp.Text = StringUtil.GetHexTimeStampString(response.baTimestamp);
+                this.GetOperLog_TextBox_results.Text = strResult;
             }
             catch (Exception ex)
             {

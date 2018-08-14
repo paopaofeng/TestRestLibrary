@@ -186,13 +186,13 @@
                     <Grid>
                         <Button Content="GetSearchResult" Height="23" HorizontalAlignment="Left" Margin="126.833,230.337,0,0" Name="getSearchResult_button_getSearchResult" VerticalAlignment="Top" Width="112.5" DataContext="{Binding}" Click="getSearchResult_button_getSearchResult_Click" />
                         <Label Content="strResultSetName:" Height="25" HorizontalAlignment="Left" Margin="18,36,0,0" Name="label20" VerticalAlignment="Top" Width="122" />
-                        <TextBox Height="21" HorizontalAlignment="Left" Margin="174.5,36,0,0" Name="getSearchResult_textBox_resultsetName" Text="fingers" VerticalAlignment="Top" Width="136" />
-                        <Label Content="iStart:" Height="25" HorizontalAlignment="Left" Margin="78.333,61.06,0,0" Name="label21" VerticalAlignment="Top" Width="50.167" FontWeight="Normal" FontStyle="Normal" />
+                        <TextBox Height="21" HorizontalAlignment="Left" Margin="174.5,36,0,0" Name="getSearchResult_textBox_resultsetName" VerticalAlignment="Top" Width="136" />
+                        <Label Content="lStart:" Height="25" HorizontalAlignment="Left" Margin="78.333,61.06,0,0" Name="label21" VerticalAlignment="Top" Width="50.167" FontWeight="Normal" FontStyle="Normal" />
                         <TextBox Height="21" HorizontalAlignment="Left" Margin="174.5,71,0,0" Name="getSearchResult_textBox_start" VerticalAlignment="Top" Width="136" Text="0" />
                         <Label Content="lCount:" Height="25" HorizontalAlignment="Left" Margin="75.833,101.433,0,0" Name="label22" VerticalAlignment="Top" Width="52.667" />
                         <TextBox Height="21" HorizontalAlignment="Left" Margin="174.5,103.433,0,0" Name="getSearchResult_textBox_Count" VerticalAlignment="Top" Width="136" Text="-1" />
                         <Label Content="strBrowseInfoStyle:" Height="25" HorizontalAlignment="Left" Margin="5,143.337,0,0" Name="label26" VerticalAlignment="Top" Width="123.5" />
-                        <TextBox Height="21" HorizontalAlignment="Left" Margin="174.5,143.337,0,0" Name="getSearchResult_textBox_strBrowseInfoStyle" VerticalAlignment="Top" Width="200" IsEnabled="True" IsReadOnly="False" Text="id,cols,format:cfgs/browse_fingerprint" AcceptsReturn="False" />
+                        <TextBox Height="21" HorizontalAlignment="Left" Margin="174.5,143.337,0,0" Name="getSearchResult_textBox_strBrowseInfoStyle" VerticalAlignment="Top" Width="250" IsEnabled="True" IsReadOnly="False" Text="id,cols" AcceptsReturn="False" />
                         <Label Content="strLang:" Height="25" HorizontalAlignment="Left" Margin="72.5,177.667,0,0" Name="label27" VerticalAlignment="Top" Width="56" />
                         <TextBox Height="21" HorizontalAlignment="Left" Margin="174.5,181.667,0,0" Name="getSearchResult_textBox_strLang" VerticalAlignment="Top" Width="136" Text="zh" />
                     </Grid>
@@ -219,7 +219,7 @@
 
                         </ComboBox>
                         <Label Content="strResultSetName:" Height="28" HorizontalAlignment="Left" Margin="10,108.433,0,0" Name="label35" VerticalAlignment="Top" />
-                        <TextBox Height="24" HorizontalAlignment="Right" Margin="0,110.767,101,0" Name="SearchReader_textBox_strResultSetName" Text="fingers" VerticalAlignment="Top" Width="157" />
+                        <TextBox Height="24" HorizontalAlignment="Right" Margin="0,110.767,101,0" Name="SearchReader_textBox_strResultSetName"  VerticalAlignment="Top" Width="157" />
                         <Label Content="strMatchStyle:" Height="28" HorizontalAlignment="Left" IsEnabled="True" Margin="10,142.433,0,0" Name="label36" VerticalAlignment="Top" />
                         <ComboBox Height="24" HorizontalAlignment="Right" Margin="0,143.934,101,0" Name="SearchReader_comboBox_strMatchStyle" VerticalAlignment="Top" Width="157">
                             <ComboBoxItem Content="exact" IsSelected="True" />
@@ -347,7 +347,7 @@
                     <Label Content="paths:" HorizontalAlignment="Left" Margin="25,20,0,0" VerticalAlignment="Top" Width="95"/>
                     <TextBox x:Name="GetBrowseRecords_textbox_paths" HorizontalAlignment="Left" Height="23" Margin="125,23,0,0" VerticalAlignment="Top" Width="319"/>
                     <Label Content="strBrowseInfoStyle:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top" Width="121"/>
-                    <TextBox x:Name="GetBrowseRecords_textbox_strBrowseInfoStyle" Text="id,cols,format:cfgs/mobile_browse" Height="23" Margin="152,53,10,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="GetBrowseRecords_textbox_strBrowseInfoStyle" Text="id,cols" Height="23" Margin="152,53,10,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
 
