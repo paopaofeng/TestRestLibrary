@@ -1,6 +1,4 @@
-﻿#define TEST
-
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -597,139 +595,7 @@ namespace TestRestLibrary
         #endregion
 
         #region GetSearchResult
-#if TEST
-
-
-        /*
-        try
-        {
-            Thread _acceptThread = new Thread(new ThreadStart(Processing));
-            _acceptThread.Start();
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("线程启动异常：" + ex.Message);
-        }
-        */
-
-
-        long lTotal = 0;
-        // CookieAwareWebClient _client = null;
-        List<Task> tasks = new List<Task>();
-
-        string baseUrl = "http://localhost/dp2library/xe/rest/";
         private void getSearchResult_button_getSearchResult_Click(object sender, RoutedEventArgs e)
-        {
-            // _client = new CookieAwareWebClient(this.cookies);
-            // _client.Headers["Content-type"] = "application/json; charset=utf-8";
-
-            Processing();
-
-            Task.Factory.StartNew(Work);
-        }
-
-        void Work()
-        {
-            foreach (Task task in tasks)
-            {
-                task.Start();
-            }
-        }
-
-        public void Processing()
-        {
-            long lStart = 0;
-            long lPerCount = Math.Min(100, lTotal);
-            for (; ; )
-            {
-                PostGetSearchResult(lStart, lPerCount);
-                lStart += lPerCount;
-                if (lStart >= lTotal || lPerCount <= 0)
-                    break;
-            }
-        }
-
-        private void DoPostGet(Object obj)
-        {
-            String json = obj as String;
-
-            CookieAwareWebClient client = new CookieAwareWebClient(this.cookies);
-            client.Headers["Content-type"] = "application/json; charset=utf-8";
-
-            Debug.WriteLine("Request = " + json);
-            byte[] baData = Encoding.UTF8.GetBytes(json);
-            // byte[] result = client.UploadData(GetMethodUrl("getsearchresult"),"POST",baData);
-            byte[] result = client.UploadData(baseUrl + "getsearchresult", "POST", baData);
-            string strResult = Encoding.UTF8.GetString(result);
-            Debug.WriteLine("Response = " + strResult);
-        }
-
-        private void PostGetSearchResult(long lStart, long lCount)
-        {
-            try
-            {
-                // CookieAwareWebClient client = new CookieAwareWebClient(this.cookies);
-                // client.Headers["Content-type"] = "application/json; charset=utf-8";
-
-                GetSearchResultRequest request = new GetSearchResultRequest();
-                request.strResultSetName = "fingers"; // this.getSearchResult_textBox_resultsetName.Text;
-                request.lStart = lStart;
-                request.lCount = lCount;
-                request.strBrowseInfoStyle = ""; // this.getSearchResult_textBox_strBrowseInfoStyle.Text;
-                request.strLang = "zh"; // this.getSearchResult_textBox_strLang.Text;
-
-                string json = Serialize(request);
-
-                Task task = new Task((tb) => DoPostGet(json), json);
-                tasks.Add(task);
-
-                /*
-                Debug.WriteLine("Request = " + json);
-                byte[] baData = Encoding.UTF8.GetBytes(json);
-                // byte[] result = client.UploadData(GetMethodUrl("getsearchresult"),"POST",baData);
-                byte[] result = _client.UploadData(baseUrl + "getsearchresult", "POST", baData);
-                string strResult = Encoding.UTF8.GetString(result);
-                Debug.WriteLine("Response = " + strResult);
-                */
-            }
-            catch (Exception ex)
-            {
-                // MessageBox.Show(this, "Exception :" + ex.Message);
-                Debug.WriteLine("Exception :" + ex.Message);
-                return;
-            }
-        }
-
-        // request.lStart = Convert.ToInt64(this.getSearchResult_textBox_start.Text);
-        // request.lCount = Convert.ToInt64(this.getSearchResult_textBox_Count.Text);
-        // GetSearchResultResponse response = Deserialize<GetSearchResultResponse>(strResult);
-
-        // MessageBox.Show(this, strResult);
-
-#else
-        long lTotal = 0;
-        private void getSearchResult_button_getSearchResult_Click(object sender, RoutedEventArgs e)
-        {
-            Processing();
-        }
-
-        public void Processing()
-        {
-            // long lStart = 0;
-
-            long[] starts = { 100, 0, 1700, 200, 500, 800, 300, 600, 900, 700, 400, 1000, 1200, 1400, 1300, 1600, 1100 };
-            long lPerCount = Math.Min(100, lTotal);
-            foreach (long lStart in starts)
-            {
-                PostGetSearchResult(lStart, lPerCount);
-                // lStart += lPerCount;
-                // if (lStart >= lTotal || lPerCount <= 0)
-                // break;
-            }
-        }
-
-
-        private void PostGetSearchResult(long lStart, long lCount)
         {
             try
             {
@@ -737,31 +603,33 @@ namespace TestRestLibrary
                 client.Headers["Content-type"] = "application/json; charset=utf-8";
 
                 GetSearchResultRequest request = new GetSearchResultRequest();
-                request.strResultSetName = "fingers"; // this.getSearchResult_textBox_resultsetName.Text;
-                request.lStart = lStart;
-                request.lCount = lCount;
-                request.strBrowseInfoStyle = ""; // this.getSearchResult_textBox_strBrowseInfoStyle.Text;
-                request.strLang = "zh"; // this.getSearchResult_textBox_strLang.Text;
+                request.strResultSetName = this.getSearchResult_textBox_resultsetName.Text;
+                request.lStart = Convert.ToInt64(this.getSearchResult_textBox_start.Text);
+                request.lCount = Convert.ToInt64(this.getSearchResult_textBox_Count.Text);
+                request.strBrowseInfoStyle = this.getSearchResult_textBox_strBrowseInfoStyle.Text;
+                request.strLang = this.getSearchResult_textBox_strLang.Text;
 
-                string json = Serialize(request);
-                Debug.WriteLine("Request = " + json);
-                byte[] baData = Encoding.UTF8.GetBytes(json);
-                byte[] result = client.UploadData(GetMethodUrl("getsearchresult"), "POST", baData);
+                byte[] baData = Encoding.UTF8.GetBytes(Serialize(request));
+
+                string strRequest = Encoding.UTF8.GetString(baData);
+
+                byte[] result = client.UploadData(GetMethodUrl("getsearchresult"),
+                                                    "POST",
+                                                    baData);
+
                 string strResult = Encoding.UTF8.GetString(result);
-                Debug.WriteLine("Response = " + strResult);
 
+                GetSearchResultResponse response = Deserialize<GetSearchResultResponse>(strResult);
+
+                MessageBox.Show(this, strResult);
             }
             catch (Exception ex)
             {
-                // MessageBox.Show(this, "Exception :" + ex.Message);
-                Debug.WriteLine("Exception :" + ex.Message);
-                return;
+                MessageBox.Show(this, "Exception :" + ex.Message);
             }
         }
 
-#endif
         #endregion
-
 
         public static class StringUtil
         {
@@ -882,8 +750,6 @@ namespace TestRestLibrary
                 string strResult = Encoding.UTF8.GetString(result);
 
                 SearchReaderResponse response = Deserialize<SearchReaderResponse>(strResult);
-
-                lTotal = response.SearchReaderResult.Value;
 
                 MessageBox.Show(this, strResult);
             }
@@ -1331,6 +1197,10 @@ namespace TestRestLibrary
                                                     baData);
                 string strResult = Encoding.UTF8.GetString(result);
                 this.GetStatisInfo_textbox_output.Text = strResult;
+
+
+                GetStatisInfoResponse response = Deserialize<GetStatisInfoResponse>(strResult);
+                this.GetStatisInfo_textbox_outputXml.Text = response.strXml;
             }
             catch (Exception ex)
             {
@@ -1359,190 +1229,5 @@ namespace TestRestLibrary
             }
             return request;
         }
-    }
-
-
-    public class GetSearchResultThread : ThreadBase
-    {
-        int m_inOnTimer = 0;
-        List<OneCall> m_calls = new List<OneCall>();
-
-        internal ReaderWriterLock m_lock = new ReaderWriterLock();
-        internal static int m_nLockTimeout = 5000;	// 5000=5秒
-
-        public GetSearchResultThread()
-        {
-            this.BeginThread();
-        }
-
-        public override void Worker()
-        {
-            List<OneCall> calls = new List<OneCall>();
-            this.m_lock.AcquireWriterLock(m_nLockTimeout);
-            this.m_inOnTimer++;
-            try
-            {
-                for (int i = 0; i < this.m_calls.Count; i++)
-                {
-                    OneCall call = this.m_calls[i];
-
-                    calls.Add(call);
-                }
-
-                this.m_calls.Clear();
-            }
-            finally
-            {
-                this.m_inOnTimer--;
-                this.m_lock.ReleaseWriterLock();
-            }
-
-            foreach (OneCall call in calls)
-            {
-
-            }
-        }
-
-
-
-
-
-        public class OneCall
-        {
-            public string name = "";
-            public object func = null;
-            public object[] parameters = null;
-        }
-    }
-
-    /// <summary>
-    /// 线程基础类
-    /// </summary>
-    [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
-    [System.Runtime.InteropServices.ComVisibleAttribute(true)]
-    public class ThreadBase
-    {
-        internal bool m_bStopThread = true;
-        internal Thread _thread = null;
-
-        internal AutoResetEvent eventClose = new AutoResetEvent(false);	// true : initial state is signaled 
-        internal AutoResetEvent eventActive = new AutoResetEvent(false);	// 激活信号
-        // internal AutoResetEvent eventFinished = new AutoResetEvent(false);	// true : initial state is signaled 
-
-        public int PerTime = 1000;   // 1 秒 5 * 60 * 1000;	// 5 分钟
-
-#if NO
-        public virtual void Clear()
-        {
-        }
-#endif
-
-        void ThreadMain()
-        {
-            m_bStopThread = false;
-            try
-            {
-                WaitHandle[] events = new WaitHandle[2];
-
-                events[0] = eventClose;
-                events[1] = eventActive;
-
-                while (m_bStopThread == false)
-                {
-                    int index = 0;
-                    try
-                    {
-                        index = WaitHandle.WaitAny(events, PerTime, false);
-                    }
-                    catch (System.Threading.ThreadAbortException /*ex*/)
-                    {
-                        break;
-                    }
-
-                    if (index == WaitHandle.WaitTimeout)
-                    {
-                        // 超时
-                        eventActive.Reset();
-                        Worker();
-                        eventActive.Reset();
-
-                    }
-                    else if (index == 0)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        // 得到激活信号
-                        eventActive.Reset();
-                        Worker();
-                        eventActive.Reset();
-                    }
-                }
-
-                return;
-            }
-            finally
-            {
-                m_bStopThread = true;
-                this._thread = null;
-            }
-        }
-
-        public virtual void Worker()
-        {
-        }
-
-        public bool Stopped
-        {
-            get
-            {
-                return m_bStopThread;
-            }
-        }
-
-        public virtual void StopThread(bool bForce)
-        {
-            if (this._thread == null)
-                return;
-
-            // 如果以前在做，立即停止
-            // this.Clear();
-
-            m_bStopThread = true;
-            this.eventClose.Set();
-
-            if (bForce == true)
-            {
-                if (this._thread != null)
-                {
-                    if (!this._thread.Join(2000))
-                        this._thread.Abort();
-                    this._thread = null;
-                }
-            }
-        }
-
-        public void BeginThread()
-        {
-            if (this._thread != null)
-                return;
-
-            // 如果以前在做，立即停止
-            StopThread(true);
-
-            this.eventActive.Set();
-            this.eventClose.Reset();
-
-            this._thread = new Thread(new ThreadStart(this.ThreadMain)) { Name = "ThreadBase", IsBackground = true };
-            this._thread.SetApartmentState(ApartmentState.STA);
-            this._thread.Start();
-        }
-
-        public void Activate()
-        {
-            eventActive.Set();
-        }
-
     }
 }

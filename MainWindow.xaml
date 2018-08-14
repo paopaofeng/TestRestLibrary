@@ -397,17 +397,17 @@
 
             <TabItem Header="GetStatisInfo" x:Name="GetStatisInfo_tabItem_GetStatisInfo">
                 <Grid>
-                    <Label Content="strDateRangeString:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="126" Margin="10,28,322,0"></Label>
-                    <TextBox Height="24" HorizontalAlignment="Left" x:Name="GetStatisInfo_textBox_strDateRangeString" VerticalAlignment="Top" Width="186" Margin="141,28,0,0"></TextBox>
-                    <Button Content="GetStatisInfo" Height="29" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="183,73,0,0" Width="100" x:Name="button_GetStatisInfo" Click="button_GetStatisInfo_Click"></Button>
-                    <Label Content="传入 JSON"  VerticalAlignment="Top" Width="126" Margin="10,117,322,0" HorizontalAlignment="Left"></Label>
-                    <TextBox Height="125" Margin="10,152,10,218" TextWrapping="Wrap" Text="" Name="GetStatisInfo_textbox_input" Width="438" HorizontalAlignment="Left"/>
-                    <Label Content="返回 JSON"  VerticalAlignment="Top" Width="126" Margin="10,277,322,0" HorizontalAlignment="Left"></Label>
-                    <TextBox HorizontalAlignment="Left" Height="178" Margin="10,307,0,0" TextWrapping="Wrap" Text="" Name="GetStatisInfo_textbox_output" VerticalAlignment="Top" Width="438"/>
+                    <Label Content="strDateRangeString:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="126" Margin="10,10,0,0"></Label>
+                    <TextBox Height="24" HorizontalAlignment="Left" x:Name="GetStatisInfo_textBox_strDateRangeString" VerticalAlignment="Top" Width="202" Margin="141,10,0,0"></TextBox>
+                    <Button Content="GetStatisInfo" Height="29" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,8,0,0" Width="100" x:Name="button_GetStatisInfo" Click="button_GetStatisInfo_Click"></Button>
+                    <Label Content="传入 JSON"  VerticalAlignment="Top" Width="126" Margin="10,40,0,0" HorizontalAlignment="Left"></Label>
+                    <TextBox Margin="10,70,0,361" TextWrapping="Wrap" Text="" Name="GetStatisInfo_textbox_input" Width="438" HorizontalAlignment="Left"/>
+                    <Label Content="返回 JSON"  VerticalAlignment="Top" Width="126" Margin="10,139,0,0" HorizontalAlignment="Left"></Label>
+                    <TextBox HorizontalAlignment="Left" Height="103" Margin="10,164,0,0" TextWrapping="Wrap" Text="" Name="GetStatisInfo_textbox_output" VerticalAlignment="Top" Width="438" VerticalScrollBarVisibility="Visible"/>
+                    <Label Content="返回值中 XML 内容"  VerticalAlignment="Top" Width="126" HorizontalAlignment="Left" Margin="10,272,0,0"/>
+                    <TextBox HorizontalAlignment="Left" Height="183" Margin="10,302,0,0" TextWrapping="Wrap" Text="" Name="GetStatisInfo_textbox_outputXml" VerticalAlignment="Top" Width="438" VerticalScrollBarVisibility="Visible"/>
                 </Grid>
             </TabItem>
-
-
         </TabControl>
     </Grid>
     <Window.BorderBrush>
