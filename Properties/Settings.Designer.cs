@@ -12,7 +12,7 @@ namespace TestRestLibrary.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.8.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -956,6 +956,54 @@ namespace TestRestLibrary.Properties {
             }
             set {
                 this["getStatisInfo_dateRangeString"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string getAuthorNumber_strAuthor {
+            get {
+                return ((string)(this["getAuthorNumber_strAuthor"]));
+            }
+            set {
+                this["getAuthorNumber_strAuthor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool getAuthorNumber_bSelectPinyin {
+            get {
+                return ((bool)(this["getAuthorNumber_bSelectPinyin"]));
+            }
+            set {
+                this["getAuthorNumber_bSelectPinyin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool getAuthorNumber_bSelectEntry {
+            get {
+                return ((bool)(this["getAuthorNumber_bSelectEntry"]));
+            }
+            set {
+                this["getAuthorNumber_bSelectEntry"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool getAuthorNumber_bOutputDebugInfo {
+            get {
+                return ((bool)(this["getAuthorNumber_bOutputDebugInfo"]));
+            }
+            set {
+                this["getAuthorNumber_bOutputDebugInfo"] = value;
             }
         }
     }

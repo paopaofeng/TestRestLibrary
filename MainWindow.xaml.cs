@@ -137,6 +137,11 @@ namespace TestRestLibrary
             this.PassGate_textBox_strGateName.Text = Properties.Settings.Default.passGate_gateName;
 
             this.GetStatisInfo_textBox_strDateRangeString.Text = Properties.Settings.Default.getStatisInfo_dateRangeString;
+
+            this.GetAuthorNumber_textBox_strAuthor.Text = Properties.Settings.Default.getAuthorNumber_strAuthor;
+            this.GetAuthorNumber_checkBox_bSelectPinyin.IsChecked = Properties.Settings.Default.getAuthorNumber_bSelectPinyin;
+            this.GetAuthorNumber_checkBox_bSelectEntry.IsChecked = Properties.Settings.Default.getAuthorNumber_bSelectEntry;
+            this.GetAuthorNumber_checkBox_bOutputDebugInfo.IsChecked = Properties.Settings.Default.getAuthorNumber_bOutputDebugInfo;
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -231,6 +236,11 @@ namespace TestRestLibrary
             Properties.Settings.Default.passGate_gateName = this.PassGate_textBox_strGateName.Text;
 
             Properties.Settings.Default.getStatisInfo_dateRangeString = this.GetStatisInfo_textBox_strDateRangeString.Text;
+
+            Properties.Settings.Default.getAuthorNumber_strAuthor = this.GetAuthorNumber_textBox_strAuthor.Text;
+            Properties.Settings.Default.getAuthorNumber_bSelectPinyin = (bool)this.GetAuthorNumber_checkBox_bSelectPinyin.IsChecked;
+            Properties.Settings.Default.getAuthorNumber_bSelectEntry = (bool)this.GetAuthorNumber_checkBox_bSelectEntry.IsChecked;
+            Properties.Settings.Default.getAuthorNumber_bOutputDebugInfo = (bool)this.GetAuthorNumber_checkBox_bOutputDebugInfo.IsChecked;
 
             Properties.Settings.Default.Save();
         }
@@ -1308,6 +1318,43 @@ namespace TestRestLibrary
 
                 GetStatisInfoResponse response = Deserialize<GetStatisInfoResponse>(strResult);
                 this.GetStatisInfo_textbox_outputXml.Text = response.strXml;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message);
+            }
+        }
+
+        private void button_GetAuthorNumber_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                CookieAwareWebClient client = new CookieAwareWebClient(this.cookies);
+                client.Headers["Content-type"] = "application/json; charset=utf-8";
+
+                GetAuthorNumberRequest request = new GetAuthorNumberRequest()
+                {
+                    strAuthor = this.GetAuthorNumber_textBox_strAuthor.Text,
+                    bSelectPinyin = (bool)this.GetAuthorNumber_checkBox_bSelectPinyin.IsChecked,
+                    bSelectEntry = (bool)this.GetAuthorNumber_checkBox_bSelectEntry.IsChecked,
+                    bOutputDebugInfo = (bool)this.GetAuthorNumber_checkBox_bOutputDebugInfo.IsChecked
+                };
+
+                string strInput = Serialize(request);
+                this.GetStatisInfo_textbox_input.Text = strInput;
+
+                byte[] baData = Encoding.UTF8.GetBytes(Serialize(request));
+                byte[] result = client.UploadData(GetMethodUrl("GetAuthorNumber"),
+                                                    "POST",
+                                                    baData);
+                string strResult = Encoding.UTF8.GetString(result);
+
+                MessageBox.Show(this, strResult);
+
+
+                GetAuthorNumberResponse response = Deserialize<GetAuthorNumberResponse>(strResult);
+                this.GetAuthorNumber_textBox_strNumber.Text = response.strNumber;
+                this.GetAuthorNumber_textBox_strDebugInfo.Text = response.strDebugInfo;
             }
             catch (Exception ex)
             {

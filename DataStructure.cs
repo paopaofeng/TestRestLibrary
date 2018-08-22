@@ -875,6 +875,48 @@ namespace TestRestLibrary
         public string strXml { get; set; }
     }
 
+    [DataContract]
+    public class GetAuthorNumberRequest
+    {
+        [DataMember]
+        public string strAuthor { get; set; }
+        [DataMember]
+        public bool bSelectPinyin { get; set; }
+        [DataMember]
+        public bool bSelectEntry { get; set; }
+        [DataMember]
+        public bool bOutputDebugInfo { get; set; }
+        [DataMember]
+        public List<Question> questions { get; set; }
+    }
+
+    [DataContract]
+    public class GetAuthorNumberResponse
+    {
+        [DataMember]
+        public LibraryServerResult GetAuthorNumberResult { get; set; }
+
+        [DataMember]
+        public List<Question> questions { get; set; }
+
+        [DataMember]
+        public string strNumber { get; set; }
+
+        [DataMember]
+        public string strDebugInfo { get; set; }
+    }
+
+
+
+    [DataContract(Namespace = "http://dp2003.com/dp2library/")]
+    public class Question
+    {
+        [DataMember]
+        public string Text = "";	// 问题正文
+        [DataMember]
+        public string Answer = "";	// 问题答案
+    }
+
     [DataContract(Namespace = "http://dp2003.com/dp2library/")]
     public class RangeStatisInfo
     {
